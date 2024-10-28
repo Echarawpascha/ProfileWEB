@@ -17,7 +17,7 @@
         <img src="giyu.png" alt="Karakter" class="character-image">
       </div>
       <div class="circle">
-        <img src="download.png" alt="Foto Anda" class="circle-image">
+        <img src="download.png" alt="FotoAingBos" class="circle-image">
       </div>
       <div class="profile-info">
         <h1>Echarawpascha</h1>
@@ -31,7 +31,26 @@
       </div>
     </div>
     </div>
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7gwUwhitgCuuoqv90wfDOA?utm_source=generator" width="380" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="content-container">
+      <div class="album small" data-cover-url="https://i.scdn.co/image/ab67616d0000b273134d5ec418af466391502905">
+        <div class="cover">
+          <img src="https://i.scdn.co/image/ab67616d0000b273134d5ec418af466391502905" alt="Album Cover">
+        </div>
+        <div class="vinyl">
+          <div class="vinyl-cover"></div>
+        </div>
+      </div>
+      
+      <iframe
+        class="spotify-player"
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/7gwUwhitgCuuoqv90wfDOA?utm_source=generator"
+        width="300"
+        height="80"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
     </div>
 
     <div class="button-container">
@@ -58,74 +77,51 @@
         Instagram
         <span class="card-button-arrow">➜</span>
       </a>
-      <h2>MY BEST MUSIC</h2>
     </div>
-    <div class="container-top smaller">
-      <div class="album small" data-cover-url="https://images.genius.com/3517a37f2f8ce13d2ea42bded78dd010.1000x1000x1.png">
-          <div class="cover">
-              <img src="https://images.genius.com/3517a37f2f8ce13d2ea42bded78dd010.1000x1000x1.png" alt="Album Cover">
-          </div>
-          <div class="vinyl">
-              <div class="vinyl-cover"></div>
-          </div>
-      </div>
-
-      <div class="album small" data-cover-url="https://i.scdn.co/image/ab67616d0000b27383e260c313dc1ff1f17909cf">
-          <div class="cover">
-              <img src="https://i.scdn.co/image/ab67616d0000b27383e260c313dc1ff1f17909cf" alt="Album Cover">
-          </div>
-          <div class="vinyl">
-              <div class="vinyl-cover"></div>
-          </div>
-      </div>
-
-      <div class="album small" data-cover-url="https://i.scdn.co/image/ab67616d0000b2739cf15c7323fb85b7112197d5">
-          <div class="cover">
-              <img src="https://i.scdn.co/image/ab67616d0000b2739cf15c7323fb85b7112197d5" alt="Album Cover">
-          </div>
-          <div class="vinyl">
-              <div class="vinyl-cover"></div>
-          </div>
-      </div>
+    <audio id="audio-player" src="wwd.mp3juice.blog - JVKE - golden hour (Piano Cover by Riyandi Kusuma).mp3" preload="auto"></audio>
   </div>
     <script>
-      const typedBioElement = document.getElementById('typed-bio');
-      const bios = ["''Welcome To My Profile''", "''Mending Turu''"];
+window.addEventListener('load', function() {
+    const audioPlayer = document.getElementById("audio-player");
+    audioPlayer.play().catch((error) => {
+        console.log("Autoplay diblokir oleh browser. Pengguna perlu mengklik halaman untuk memulai audio.");
+    });
+});
+const typedBioElement = document.getElementById('typed-bio');
+const bios = ["''Welcome To My Profile''", "''Mending Turu''"];
 
-      let currentBioIndex = 0;
-      let currentText = '|';
-      let isDeleting = false;
-      let typingSpeed = 100;
-      let deleteSpeed = 50;
-      let delayTime = 7000;
+let currentBioIndex = 0;
+let currentText = '|';
+let isDeleting = false;
+let typingSpeed = 100;
+let deleteSpeed = 50;
+let delayTime = 7000;
 
-      function typeBio() {
-        const currentBio = bios[currentBioIndex];
-        if (isDeleting) {
-          currentText = currentBio.substring(0, currentText.length - 1);
-        } else {
-          currentText = currentBio.substring(0, currentText.length + 1);
-        }
-        typedBioElement.textContent = currentText;
+function typeBio() {
+    const currentBio = bios[currentBioIndex];
+    if (isDeleting) {
+        currentText = currentBio.substring(0, currentText.length - 1);
+    } else {
+        currentText = currentBio.substring(0, currentText.length + 1);
+    }
+    typedBioElement.textContent = currentText;
 
-        if (!isDeleting && currentText === currentBio) {
-          setTimeout(() => {
+    if (!isDeleting && currentText === currentBio) {
+        setTimeout(() => {
             isDeleting = true;
             typingSpeed = deleteSpeed;
-          }, delayTime);
-        } else if (isDeleting && currentText === '') {
-          isDeleting = false;
-          currentBioIndex = (currentBioIndex + 1) % bios.length;
-          typingSpeed = 100;
-          delayTime = 7000;
-        }
+        }, delayTime);
+    } else if (isDeleting && currentText === '') {
+        isDeleting = false;
+        currentBioIndex = (currentBioIndex + 1) % bios.length;
+        typingSpeed = 100;
+        delayTime = 7000;
+    }
 
-        setTimeout(typeBio, typingSpeed);
-      }
+    setTimeout(typeBio, typingSpeed);
+}
 
-      typeBio();
-
-
+typeBio();
     </script>
   </body>
 

@@ -31,8 +31,10 @@ body {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 767px) {
-  .mode-switch {
-    padding-right: 10px;
+  .card {
+    width: 95%; /* Lebar card lebih besar untuk perangkat kecil */
+    margin: 0 auto; /* Pusatkan card */
+    padding: 10px; /* Kurangi padding jika perlu */
   }
 }
 
