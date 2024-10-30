@@ -1,12 +1,11 @@
-/* Album Styles */
 .album {
-    --album-size: 300px; /* Base size */
-    --vinyl-size: 280px; /* Base vinyl size */
-    --border-radius: 3px; /* Border radius */
-    --cover-translate: -10px; /* Translation for hover */
-    --cover-rotate: -2deg; /* Rotation for hover */
-    --vinyl-translate: 50%; /* Vinyl translation for hover */
-    --vinyl-rotate: 360deg; /* Vinyl rotation for hover */
+    --album-size: 300px; 
+    --vinyl-size: 280px;
+    --border-radius: 3px; 
+    --cover-translate: -10px; 
+    --cover-rotate: -2deg; 
+    --vinyl-translate: 50%; 
+    --vinyl-rotate: 360deg; 
   
     position: relative;
     width: var(--album-size);
@@ -122,13 +121,13 @@
     }
   
     &.small {
-      --album-size: 150px; /* Reduced size */
-      --vinyl-size: 130px; /* Reduced vinyl size */
-      --border-radius: 2px; /* Adjusted border radius */
-      --cover-translate: -5px; /* Adjusted translation for hover */
-      --cover-rotate: -1deg; /* Adjusted rotation for hover */
-      --vinyl-translate: 50%; /* Adjusted vinyl translation for hover */
-      --vinyl-rotate: 360deg; /* Same vinyl rotation */
+      --album-size: 150px; 
+      --vinyl-size: 130px; 
+      --border-radius: 2px; 
+      --cover-translate: -5px; 
+      --cover-rotate: -1deg;
+      --vinyl-translate: 50%; 
+      --vinyl-rotate: 360deg; 
     }
   }
   
@@ -142,28 +141,26 @@
     }
   }
   
-  /* Body Styles */
-  body {
+body {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     height: 100%;
     margin: 4rem 0;
-    background-color: #d5d5d5; /* Background color */
+    background-color: #d5d5d5; 
   }
   
-  /* Kontainer untuk album kecil dan player Spotify */
 .content-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Menjaga agar elemen-elemen di dalam kontainer rata tengah */
+  align-items: center; 
   gap: 10px;
   margin-top: 20px;
 }
 
 .album.small {
-  width: 150px; /* Ukuran kecil untuk album */
+  width: 150px; 
 }
 
 .spotify-player {
